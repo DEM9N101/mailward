@@ -1,0 +1,8 @@
+# Keep LF everywhere. The CLI carries a shebang, and "#!/usr/bin/env node\r"
+# is not a program Linux will run.
+* text=auto eol=lf
+
+# Report fixtures are compressed archives. Any line ending conversion would
+# corrupt them and the archive tests would fail in confusing ways.
+*.gz  binary
+*.zip binary
