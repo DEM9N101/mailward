@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "test": "node --test \"test/**/*.test.js\"",
-    "lint": "node --check bin/mailward.js"
+    "lint": "node scripts/check-bom.js && node --check bin/mailward.js"
   },
   "engines": {
     "node": ">=18.17"

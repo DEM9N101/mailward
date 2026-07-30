@@ -35,20 +35,8 @@ jobs:
             exit 1
           fi
 
-      # A UTF-8 BOM in front of the shebang stops the kernel recognising
-      # bin/mailward.js as a script, so an installed CLI fails to run on Linux
-      # and macOS. Windows editors and PowerShell add one very easily.
       - name: Reject byte order marks
-        shell: bash
-        run: |
-          found=$(find . -path ./.git -prune -o -type f \( -name '*.js' -o -name '*.json' -o -name '*.md' -o -name '*.yml' -o -name '*.xml' \) -print \
-            | xargs grep -lI $'\xEF\xBB\xBF' 2>/dev/null || true)
-          if [ -n "$found" ]; then
-            echo "these files start with a byte order mark:" >&2
-            echo "$found" >&2
-            exit 1
-          fi
-          echo "no byte order marks"
+        run: node scripts/check-bom.js
 
       - name: Syntax check the entry point
         run: node --check bin/mailward.js

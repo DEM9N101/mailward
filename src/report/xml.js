@@ -22,7 +22,9 @@
  * @returns {XmlNode} the root element
  */
 export function parseXml(source) {
-  const input = String(source).replace(/^﻿/, '');
+  // Written as an escape rather than a literal U+FEFF so the character does
+  // not sit invisibly in the source and trip byte order mark checks.
+  const input = String(source).replace(/^\uFEFF/, '');
   let index = 0;
 
   /** @type {XmlNode[]} */
