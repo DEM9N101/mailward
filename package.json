@@ -17,7 +17,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test \"test/**/*.test.js\"",
+    "test": "node --test",
     "lint": "node scripts/check-bom.js && node --check bin/mailward.js"
   },
   "engines": {
