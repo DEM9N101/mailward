@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Turning records into advice.
  *
  * The audit modules answer "what is published". This module answers the only

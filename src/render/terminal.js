@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Terminal output.
  *
  * The report has to be readable by someone who does not already know what

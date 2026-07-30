@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "mailward",
   "version": "0.1.0",
   "description": "Audit SPF, DKIM, DMARC, MTA-STS, TLS-RPT and BIMI for any domain, and read DMARC aggregate reports offline. Zero dependencies, no account, nothing uploaded.",

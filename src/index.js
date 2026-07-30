@@ -1,4 +1,4 @@
-﻿/**
+/**
  * mailward - public API.
  *
  * Everything here is usable as a library, not just through the CLI:

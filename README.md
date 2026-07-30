@@ -1,4 +1,4 @@
-﻿# mailward
+# mailward
 
 Check that nobody can send email pretending to be your domain, and read your DMARC reports without uploading them to anyone.
 

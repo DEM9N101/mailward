@@ -1,4 +1,4 @@
-﻿/**
+/**
  * The transport and branding layer: MTA-STS, TLS-RPT, BIMI and DNSSEC.
  *
  * SPF, DKIM and DMARC prove who wrote a message. These prove the connection
