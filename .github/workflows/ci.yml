@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: ['18.17', '20', '22', '24']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # There are no dependencies to install. That is deliberate, and this
+      # job would start failing the moment somebody added one.
+      - name: Check that the dependency tree is still empty
+        shell: bash
+        run: |
+          if node -e "const p=require('./package.json');process.exit(Object.keys(p.dependencies||{}).length?1:0)"; then
+            echo "no runtime dependencies"
+          else
+            echo "mailward is meant to have zero runtime dependencies" >&2
+            exit 1
+          fi
+
+      - name: Syntax check the entry point
+        run: node --check bin/mailward.js
+
+      - name: Test
+        run: npm test
+
+      - name: Smoke test the CLI against real DNS
+        if: matrix.os == 'ubuntu-latest' && matrix.node == '22'
+        run: |
+          node bin/mailward.js cloudflare.com --tree --no-dkim
+          node bin/mailward.js report test/fixtures
+          node bin/mailward.js example.com --json > /dev/null

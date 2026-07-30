@@ -1,0 +1,52 @@
+{
+  "name": "mailward",
+  "version": "0.1.0",
+  "description": "Audit SPF, DKIM, DMARC, MTA-STS, TLS-RPT and BIMI for any domain, and read DMARC aggregate reports offline. Zero dependencies, no account, nothing uploaded.",
+  "type": "module",
+  "bin": {
+    "mailward": "bin/mailward.js"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "lint": "node --check bin/mailward.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "keywords": [
+    "dmarc",
+    "spf",
+    "dkim",
+    "bimi",
+    "mta-sts",
+    "tls-rpt",
+    "email",
+    "email-security",
+    "email-authentication",
+    "deliverability",
+    "phishing",
+    "spoofing",
+    "dns",
+    "doh",
+    "cli"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mahmoud-ahmadi101/mailward.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mahmoud-ahmadi101/mailward/issues"
+  },
+  "homepage": "https://github.com/Mahmoud-ahmadi101/mailward#readme"
+}
