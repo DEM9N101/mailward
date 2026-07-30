@@ -1,5 +1,10 @@
 # mailward
 
+[![ci](https://github.com/DEM9N101/mailward/actions/workflows/ci.yml/badge.svg)](https://github.com/DEM9N101/mailward/actions/workflows/ci.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](package.json)
+[![node](https://img.shields.io/badge/node-%3E%3D18.17-brightgreen.svg)](package.json)
+
 Check that nobody can send email pretending to be your domain, and read your DMARC reports without uploading them to anyone.
 
 One command. No account, no signup, no dependencies, nothing leaves your machine.
