@@ -1,11 +1,11 @@
-# mailward
+﻿# mailward
 
 Check that nobody can send email pretending to be your domain, and read your DMARC reports without uploading them to anyone.
 
 One command. No account, no signup, no dependencies, nothing leaves your machine.
 
 ```bash
-npx github:Mahmoud-ahmadi101/mailward example.com
+npx github:DEM9N101/mailward example.com
 ```
 
 ```
@@ -129,10 +129,10 @@ Node 18.17 or newer. That is the only requirement.
 
 ```bash
 # run it without installing anything
-npx github:Mahmoud-ahmadi101/mailward example.com
+npx github:DEM9N101/mailward example.com
 
 # or clone and run, which needs no install step either
-git clone https://github.com/Mahmoud-ahmadi101/mailward.git
+git clone https://github.com/DEM9N101/mailward.git
 cd mailward
 node bin/mailward.js example.com
 ```
@@ -180,7 +180,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npx github:Mahmoud-ahmadi101/mailward example.com --fail-on high
+      - run: npx github:DEM9N101/mailward example.com --fail-on high
 ```
 
 ## As a library
